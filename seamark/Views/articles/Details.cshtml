@@ -1,0 +1,67 @@
+﻿@model seamark.Models.article
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>article</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Solveflag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Solveflag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deleteflag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deleteflag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Highlightflag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Highlightflag)
+        </dd>
+
+    </dl>
+</div>
+<p>
+  @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+  @Html.ActionLink("Back to List", "Index")
+  <a href="/comments/Index/@Model.Id" class="btn btn-default">コメント一覧</a>
+</p>

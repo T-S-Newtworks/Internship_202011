@@ -1,0 +1,61 @@
+﻿@model IEnumerable<seamark.Models.article>
+
+@{
+  /**/
+
+  /**/
+
+  ViewBag.Title = "Index";
+}
+
+<h2>社員共有掲示板</h2>
+
+
+
+<div style="border: solid ;">
+  @foreach (var item in Model.OrderByDescending(e => e.Date))
+  {
+    <a href="/comments/Create/@item.Id" class="btn btn-default" style="width:100%;">
+  <div style="border: solid ;text-align:left;">
+    <p>
+      @Html.DisplayFor(modelItem => item.Date)<br />
+    </p>
+
+    <p>
+      @Html.DisplayFor(modelItem => item.Name)<br />
+    </p>
+
+    @* <td>*@
+    @*    @Html.DisplayFor(modelItem => item.Solveflag)*@
+    @*  </td>*@
+
+    @* <td>*@
+    @*@Html.DisplayFor(modelItem => item.Deleteflag)*@
+    @*</td>*@
+
+    <p style="border: dotted ;">
+      @Html.DisplayFor(modelItem => item.Text)
+    </p>
+    @*<td>*@
+    @*@Html.DisplayFor(modelItem => item.Highlightflag)*@
+    @*</td>*@
+
+  </div>
+
+  @*@Html.ActionLink("投稿", "Edit", new { id = item.Id })*@
+
+</a>
+  <br />
+      <span> | </span>
+      @*@Html.ActionLink("詳細", "Details", new { id = item.Id })*@
+      <a href="/articles/Details/@item.Id" class="btn btn-default">詳細</a>
+      <span> | </span>
+      @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    <br />
+      
+
+      }
+
+      @*<a href="/articles/Edit/@item.Id" class="btn btn-default">投稿</a>*@
+  </div>
+ 

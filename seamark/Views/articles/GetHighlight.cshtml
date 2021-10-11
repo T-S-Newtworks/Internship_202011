@@ -1,0 +1,51 @@
+﻿@model seamark.Models.article
+
+@{
+  ViewBag.Title = "Index";
+  Layout = "";
+}
+
+<div>
+  <font size="6">↓ハイライトメッセージ</font>
+
+  <table class="table">
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.Date)
+      </th>
+
+
+
+      <th>
+        @Html.DisplayNameFor(model => model.Name)
+      </th>
+
+      <th>
+        @Html.DisplayNameFor(model => model.Text)
+      </th>
+
+      
+    </tr>
+
+
+    <tr>
+      <td>
+        @Html.DisplayFor(modelModel => Model.Date)
+      </td>
+      
+      <td>
+        @Html.DisplayFor(modelModel => Model.Name)
+      </td>
+     
+      <td>
+        @Html.DisplayFor(modelModel => Model.Text)
+      </td>
+      <td>
+        @Html.DisplayFor(modelModel => Model.Highlightflag)
+      </td>
+      
+    </tr>
+
+
+  </table>
+</div>

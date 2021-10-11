@@ -1,0 +1,53 @@
+﻿@model seamark.Models.highlights
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+  @Html.ActionLink("seamark", "Index", "Articles", new { area = "" }, new { @class = "navbar-brand" })
+</div>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+  <tr>
+    <th>
+      @Html.DisplayNameFor(model => model.Date)
+    </th>
+    
+    <th>
+      @Html.DisplayNameFor(model => model.Name)
+    </th>
+
+    <th>
+      @Html.DisplayNameFor(model => model.Text)
+    </th>
+
+
+    <th></th>
+  </tr>
+
+  <tr>
+    <td>
+      @Html.DisplayFor(modelModel => Model.Date)
+    </td>
+    <td>
+      @Html.DisplayFor(modelModel => Model.Name)
+    </td>
+    <td>
+      @Html.DisplayFor(modelModel => Model.Text)
+    </td>
+   
+
+    <td>
+      @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+      @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
+      @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+    </td>
+  </tr>
+}
+
+</table>

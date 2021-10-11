@@ -1,0 +1,96 @@
+﻿@model seamark.Models.article
+
+@{
+        /**/
+
+        ViewBag.Title = "投稿画面";
+}
+
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+  @Html.AntiForgeryToken()
+
+  <div class="form-horizontal">
+    <h4>記事</h4>
+    <hr />
+    <hr />
+    <div style="border: solid ;">
+
+      @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+      <div class="form-group">
+        @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+          @Html.TextAreaFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
+          @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+          @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+          @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+          @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+          @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+
+        <span class="form-group">
+          @Html.LabelFor(model => model.Deleteflag, htmlAttributes: new { @class = "control-label col-md-2" })
+          <span class="col-md-10">
+            <span class="checkbox">
+              @Html.EditorFor(model => model.Deleteflag)
+              @Html.ValidationMessageFor(model => model.Deleteflag, "", new { @class = "text-danger" })
+            </span>
+          </span>
+        </span>
+        <span class="form-group">
+          @Html.LabelFor(model => model.Solveflag, htmlAttributes: new { @class = "control-label col-md-2" })
+          <span class="col-md-10">
+            <span class="checkbox">
+              @Html.EditorFor(model => model.Solveflag)
+              @Html.ValidationMessageFor(model => model.Solveflag, "", new { @class = "text-danger" })
+            </span>
+          </span>
+        </span>
+      </div>
+      <span class="form-group">
+        @Html.LabelFor(model => model.Highlightflag, htmlAttributes: new { @class = "control-label col-md-2" })
+        <span class="col-md-10">
+          <span class="checkbox">
+            @Html.EditorFor(model => model.Highlightflag)
+            @Html.ValidationMessageFor(model => model.Highlightflag, "", new { @class = "text-danger" })
+          </span>
+        </span>
+      </span>
+    </div>
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="投稿" class="btn btn-default" />
+      </div>
+    </div>
+
+
+
+    <div>
+      @Html.ActionLink("戻る", "Index")
+    </div>
+  </div>
+
+
+  @section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+  }
+}
